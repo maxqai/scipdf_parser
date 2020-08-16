@@ -273,7 +273,7 @@ def convert_article_soup_to_dict(article):
         return None
 
 
-def parse_pdf_to_dict(pdf_path):
+def parse_pdf_to_dict(pdf_path, grobid_url=GROBID_URL):
     """
     Parse the given 
 
@@ -285,7 +285,7 @@ def parse_pdf_to_dict(pdf_path):
     =====
     article_dict: dict, dictionary of an article
     """
-    parsed_article = parse_pdf(pdf_path, fulltext=True, soup=True)
+    parsed_article = parse_pdf(pdf_path, fulltext=True, soup=True, grobid_url=grobid_url)
     article_dict = convert_article_soup_to_dict(parsed_article)
     return article_dict
 
